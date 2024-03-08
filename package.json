@@ -2,16 +2,18 @@
   "name": "with-vue-nuxt",
   "private": true,
   "scripts": {
-    "build": "yarn run turbo build",
-    "dev": "yarn run turbo dev",
-    "lint": "yarn run turbo lint",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "dependencies": {
+    "turbo": "latest"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "tsconfig": "*",
-    "turbo": "latest"
   },
   "packageManager": "yarn@1.22.19",
   "workspaces": [
