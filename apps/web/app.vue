@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { add } from "math-helpers";
 import { Page } from "ui";
 
 const config = useRuntimeConfig()
@@ -11,5 +12,5 @@ useHead({
 </script>
 
 <template>
-  <Page :app-name="appName" />
+  <Page :app-name="`${appName} ${add(1, 2)}`" />
 </template>
