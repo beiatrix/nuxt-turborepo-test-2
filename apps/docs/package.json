@@ -12,6 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "math-helpers": "*",
     "ui": "*"
   },
   "devDependencies": {

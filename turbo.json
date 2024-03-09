@@ -1,12 +1,30 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "globalDependencies": [
+    "**/.env.*local", 
+    ".github/**"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
       "dotEnv": [".env"],
+      "outputs": [".nuxt/**", ".output/**", "dist/**"]
+    },
+    "docs#build": {
+      "dependsOn": ["^build"],
+      "dotEnv": [".env"],
       "env": ["APP_NAME"],
       "outputs": [".nuxt/**", ".output/**", "dist/**"]
+    },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "dotEnv": [".env"],
+      "env": ["APP_NAME"],
+      "outputs": [".nuxt/**", ".output/**", "dist/**"]
+    },
+    "math-helpers#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
     },
     "lint": {},
     "dev": {
