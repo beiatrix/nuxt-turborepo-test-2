@@ -1,5 +1,11 @@
 # math-helpers
 
+## 1.5.0
+
+### Minor Changes
+
+- c04ff4d: multiply method
+
 ## 1.4.0
 
 ### Minor Changes
