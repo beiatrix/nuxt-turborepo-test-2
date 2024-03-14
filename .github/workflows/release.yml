@@ -1,0 +1,21 @@
+name: "github-release"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  github-release:
+    name: Create GitHub Release
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Github release 🚀
+        uses: "marvinpinto/action-automatic-releases@latest"
+        # Creates a GitHub release every time new tags are pushed to the repo
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
