@@ -2,4 +2,4 @@
 "math-helpers": minor
 ---
 
-add multiply method
+remove multiply method
