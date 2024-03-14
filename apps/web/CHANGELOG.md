@@ -1,5 +1,17 @@
 # web
 
+## 1.3.0
+
+### Minor Changes
+
+- 46844c1: add divide method
+
+### Patch Changes
+
+- Updated dependencies [46844c1]
+  - math-helpers@1.6.0
+  - ui@0.2.0
+
 ## 1.2.0
 
 ### Minor Changes

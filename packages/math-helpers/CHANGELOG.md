@@ -1,5 +1,11 @@
 # math-helpers
 
+## 1.6.0
+
+### Minor Changes
+
+- 46844c1: add divide method
+
 ## 1.5.0
 
 ### Minor Changes
