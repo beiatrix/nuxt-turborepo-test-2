@@ -1,5 +1,11 @@
 # math-helpers-test
 
+## 1.7.0
+
+### Minor Changes
+
+- be638bf: rename math-helpers
+
 ## 1.6.0
 
 ### Minor Changes
