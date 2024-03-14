@@ -1,5 +1,11 @@
 # math-helpers
 
+## 1.3.0
+
+### Minor Changes
+
+- acfd2b9: add multiply method
+
 ## 1.2.0
 
 ### Minor Changes
