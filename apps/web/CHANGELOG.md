@@ -1,5 +1,16 @@
 # web
 
+## 1.1.0
+
+### Minor Changes
+
+- 49437b7: update app names, remove multiply method
+
+### Patch Changes
+
+- Updated dependencies [49437b7]
+  - math-helpers@1.2.0
+
 ## 1.0.0
 
 ### Major Changes
