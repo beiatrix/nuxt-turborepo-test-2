@@ -7,4 +7,4 @@
 "ui": minor
 ---
 
-multiply method
+add divide method

@@ -1,5 +1,17 @@
 # web
 
+## 1.2.0
+
+### Minor Changes
+
+- c04ff4d: multiply method
+
+### Patch Changes
+
+- Updated dependencies [c04ff4d]
+  - math-helpers@1.5.0
+  - ui@0.1.0
+
 ## 1.1.0
 
 ### Minor Changes
