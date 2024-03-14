@@ -1,5 +1,17 @@
 # web
 
+## 1.4.0
+
+### Minor Changes
+
+- be638bf: rename math-helpers
+
+### Patch Changes
+
+- Updated dependencies [be638bf]
+  - math-helpers-test@1.7.0
+  - ui@0.3.0
+
 ## 1.3.0
 
 ### Minor Changes
