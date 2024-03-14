@@ -1,5 +1,11 @@
 # math-helpers
 
+## 1.4.0
+
+### Minor Changes
+
+- dafed8c: remove multiply method
+
 ## 1.3.0
 
 ### Minor Changes
