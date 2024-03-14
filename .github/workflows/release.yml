@@ -19,3 +19,12 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
+
+      - name: Merge main back into development 🔄
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          git checkout development
+          git merge $BRANCH
+          git push origin development
+          git checkout $BRANCH
