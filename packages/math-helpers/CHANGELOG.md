@@ -1,5 +1,11 @@
 # math-helpers
 
+## 1.2.0
+
+### Minor Changes
+
+- 49437b7: update app names, remove multiply method
+
 ## 1.1.0
 
 ### Minor Changes
