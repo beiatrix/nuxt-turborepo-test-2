@@ -25,13 +25,21 @@ jobs:
       - name: Install dependencies 🧑‍💻
         run: yarn
 
-      - name: Build packages 🛠️
-        run: yarn build --force
+      - name: Set NPM_TOKEN in .npmrc 🔑
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create Release Pull Request 📝
+      - name: Create Release Pull Request or Publish to npm 📝
+        id: changesets
         uses: changesets/action@v1
         with:
-          # Creates PR to bump versions and write changelogs + pushes tags
-          publish: yarn version
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: yarn publish-packages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
