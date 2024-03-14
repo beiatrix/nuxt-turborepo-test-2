@@ -35,14 +35,6 @@ jobs:
 
       - name: Build packages 🛠️
         run: yarn build --force
-
-      - name: Create Release Pull Request 📝
-        uses: changesets/action@v1
-        with:
-          # Creates PR to bump versions and write changelogs + pushes tags
-          publish: yarn version
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Publish to npm 🚀
         run: yarn publish
