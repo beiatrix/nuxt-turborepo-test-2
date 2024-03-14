@@ -9,7 +9,7 @@
 ### Patch Changes
 
 - Updated dependencies [46844c1]
-  - math-helpers@1.6.0
+  - math-helpers-test@1.6.0
   - ui@0.2.0
 
 ## 1.2.0
@@ -21,7 +21,7 @@
 ### Patch Changes
 
 - Updated dependencies [c04ff4d]
-  - math-helpers@1.5.0
+  - math-helpers-test@1.5.0
   - ui@0.1.0
 
 ## 1.1.0
@@ -33,7 +33,7 @@
 ### Patch Changes
 
 - Updated dependencies [49437b7]
-  - math-helpers@1.2.0
+  - math-helpers-test@1.2.0
 
 ## 1.0.0
 
@@ -44,4 +44,4 @@
 ### Patch Changes
 
 - Updated dependencies [9254149]
-  - math-helpers@1.0.0
+  - math-helpers-test@1.0.0
