@@ -23,7 +23,7 @@
       "env": ["APP_NAME"],
       "outputs": [".nuxt/**", ".output/**", "dist/**"]
     },
-    "math-helpers#build": {
+    "math-helpers-test#build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
