@@ -1,5 +1,5 @@
 ---
-"math-helpers": minor
+"math-helpers-test": minor
 "docs": minor
 "web": minor
 "eslint-config-custom": minor
@@ -7,4 +7,4 @@
 "ui": minor
 ---
 
-add divide method
+rename math-helpers

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { add } from "math-helpers";
+import { add } from "math-helpers-test";
 import { Page } from "ui";
 
 const config = useRuntimeConfig()
