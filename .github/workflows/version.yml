@@ -1,4 +1,4 @@
-name: Release
+name: version
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
       - name: Create Release Pull Request 📝
         uses: changesets/action@v1
         with:
-          # Creates PR to bump versions and write changelogs
+          # Creates PR to bump versions and write changelogs + pushes tags
           publish: yarn version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,3 +50,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Merge main back into development 🔄
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          git checkout development
+          git merge $BRANCH
+          git push origin development
+          git checkout $BRANCH
