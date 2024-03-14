@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  create-release-version:
+    if: ${{ !contains(github.event.head_commit.message, 'Version Packages') && github.ref == 'refs/heads/main' }}
+
+    name: Create Release Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install dependencies 🧑‍💻
+        run: yarn
+
+      - name: Set NPM_TOKEN in .npmrc 🔑
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build packages 🛠️
+        run: yarn build --force
+
+      - name: Create Release Pull Request 📝
+        uses: changesets/action@v1
+        with:
+          # Creates PR to bump versions and write changelogs
+          publish: yarn version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Publish to npm 🚀
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: yarn publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
