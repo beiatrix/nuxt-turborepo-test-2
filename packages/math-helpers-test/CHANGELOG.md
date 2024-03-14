@@ -1,4 +1,4 @@
-# math-helpers
+# math-helpers-test
 
 ## 1.6.0
 
