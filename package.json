@@ -1,6 +1,5 @@
 {
   "name": "nuxt-turborepo-test",
-  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -14,6 +13,7 @@
     "turbo": "latest"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
