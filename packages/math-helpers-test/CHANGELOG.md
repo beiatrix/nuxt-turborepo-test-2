@@ -1,5 +1,11 @@
 # math-helpers-test
 
+## 1.9.4
+
+### Patch Changes
+
+- [#100](https://github.com/beiatrix/nuxt-turborepo-test/pull/100) [`9d2ce18`](https://github.com/beiatrix/nuxt-turborepo-test/commit/9d2ce18a7ed912fb9001aad4b4445bc41491309b) Thanks [@beiatrix](https://github.com/beiatrix)! - add floor method
+
 ## 1.9.3
 
 ### Patch Changes
