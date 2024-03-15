@@ -17,3 +17,7 @@ export const divide = (a: number, b: number) => {
 export const min = (a: number, b: number) => {
   return Math.min(a, b);
 };
+
+export const max = (a: number, b: number) => {
+  return Math.max(a, b);
+};

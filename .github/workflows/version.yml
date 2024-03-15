@@ -45,11 +45,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Set env variables ⚙
+        run: |
+          echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+
       - name: Merge main back into development 🔄
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
+          git fetch
+          git checkout $BRANCH
+          git pull
           git checkout development
+          git pull
           git merge $BRANCH
           git push origin development
           git checkout $BRANCH
