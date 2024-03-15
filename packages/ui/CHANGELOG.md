@@ -1,5 +1,11 @@
 # ui
 
+## 0.3.0
+
+### Minor Changes
+
+- be638bf: rename math-helpers
+
 ## 0.2.0
 
 ### Minor Changes
