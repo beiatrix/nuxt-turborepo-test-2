@@ -1,5 +1,16 @@
 # web
 
+## 1.5.0
+
+### Minor Changes
+
+- 15305ee: remove hi from web appName
+
+### Patch Changes
+
+- Updated dependencies [e3094c8]
+  - math-helpers-test@1.8.0
+
 ## 1.4.0
 
 ### Minor Changes
