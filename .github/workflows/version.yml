@@ -23,11 +23,6 @@ jobs:
       - name: Install dependencies 🧑‍💻
         run: yarn
 
-      - name: Setup git 💻
-        run: |
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git config user.name "$GITHUB_ACTOR"
-
       - name: Set NPM_TOKEN in .npmrc 🔑
         run: |
           cat << EOF > "$HOME/.npmrc"
@@ -44,20 +39,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Set env variables ⚙
-        run: |
-          echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
-
-      - name: Merge main back into development 🔄
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        run: |
-          git fetch
-          git checkout $BRANCH
-          git pull
-          git checkout development
-          git pull
-          git merge $BRANCH
-          git push origin development
-          git checkout $BRANCH
