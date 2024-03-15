@@ -1,5 +1,11 @@
 # docs
 
+## 1.6.0
+
+### Minor Changes
+
+- 5ae0135: add smiley to docs appName
+
 ## 1.5.0
 
 ### Minor Changes

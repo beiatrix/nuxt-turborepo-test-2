@@ -1,0 +1,33 @@
+name: "merge-main"
+
+on: 
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+jobs:
+  merge-main-into-development:
+    if: github.event.pull_request.merged == true
+
+    name: Merge main into development
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Setup git 💻
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+
+      - name: Merge main back into development 🔄
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          git fetch --unshallow
+          git checkout development
+          git pull
+          git merge --no-ff main -m 'chore: merge main into development'
+          git push origin development
+          git checkout main
