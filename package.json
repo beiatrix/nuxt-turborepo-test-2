@@ -1,5 +1,6 @@
 {
-  "name": "with-vue-nuxt",
+  "name": "nuxt-turborepo-test",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",

@@ -13,9 +13,27 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v4
 
+      - name: Setup git 💻
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+
       - name: Github release 🚀
         uses: "marvinpinto/action-automatic-releases@latest"
         # Creates a GitHub release every time new tags are pushed to the repo
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
+
+      - name: Set env variables ⚙
+        run: |
+          echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
+
+      - name: Merge main back into development 🔄
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          git checkout development
+          git merge $BRANCH
+          git push origin development
+          git checkout $BRANCH
