@@ -1,5 +1,11 @@
 # web
 
+## 1.6.0
+
+### Minor Changes
+
+- 3db1970: add smiley to web appName
+
 ## 1.5.0
 
 ### Minor Changes
