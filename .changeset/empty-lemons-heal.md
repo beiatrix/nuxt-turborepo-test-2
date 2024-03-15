@@ -2,4 +2,4 @@
 "math-helpers-test": patch
 ---
 
-add round method
+remove round and floor methods
