@@ -1,5 +1,13 @@
 # web
 
+## 1.9.6
+
+### Patch Changes
+
+- Updated dependencies [[`0c0354b`](https://github.com/beiatrix/nuxt-turborepo-test/commit/0c0354bf1fce59d4edffd56a5a76fbf227855716)]:
+  - math-helpers-test@1.9.6
+  - ui@1.9.6
+
 ## 1.9.5
 
 ### Patch Changes
