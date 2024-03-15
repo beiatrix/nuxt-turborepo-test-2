@@ -6,10 +6,13 @@ on:
     types: [closed]
 
 jobs:
-  merge-main-into-development:
-    if: github.event.pull_request.merged == true
+  merge-main:
+    if: ${{ 
+        contains(github.event.head_commit.message, 'Version Packages') && 
+        github.event.pull_request.merged == true
+      }}
 
-    name: Merge main into development
+    name: Merge main
     runs-on: "ubuntu-latest"
 
     steps:
@@ -21,13 +24,25 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git config user.name "$GITHUB_ACTOR"
 
-      - name: Merge main back into development 🔄
+      - name: Merge main back into staging, release, and development 🔄
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           git fetch --unshallow
+          git checkout staging
+          git pull
+          git merge main
+          git push origin staging
+          git checkout main
+  
+          git checkout release
+          git pull
+          git merge main
+          git push origin release
+          git checkout main
+  
           git checkout development
           git pull
-          git merge --no-ff main -m 'chore: merge main into development'
+          git merge main
           git push origin development
           git checkout main
