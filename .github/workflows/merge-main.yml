@@ -6,8 +6,69 @@ on:
     types: [closed]
 
 jobs:
+  merge-main-into-staging:
+    if: ${{ 
+        contains(github.event.head_commit.message, 'Version Packages') && 
+        github.event.pull_request.merged == true
+      }}
+
+    name: Merge main into staging
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Setup git 💻
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+
+      - name: Merge main back into staging 🔄
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          git fetch --unshallow
+          git checkout staging
+          git pull
+          git merge --no-ff main -m 'chore: merge main into staging'
+          git push origin staging
+          git checkout main
+  
+  merge-main-into-release:
+    if: ${{ 
+        contains(github.event.head_commit.message, 'Version Packages') && 
+        github.event.pull_request.merged == true
+      }}
+
+    name: Merge main into release
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Setup git 💻
+        run: |
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "$GITHUB_ACTOR"
+
+      - name: Merge main back into release 🔄
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          git fetch --unshallow
+          git checkout release
+          git pull
+          git merge --no-ff main -m 'chore: merge main into release'
+          git push origin release
+          git checkout main
+  
   merge-main-into-development:
-    if: github.event.pull_request.merged == true
+    if: ${{ 
+        contains(github.event.head_commit.message, 'Version Packages') && 
+        github.event.pull_request.merged == true
+      }}
 
     name: Merge main into development
     runs-on: "ubuntu-latest"
