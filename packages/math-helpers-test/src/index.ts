@@ -29,3 +29,7 @@ export const floor = (n: number) => {
 export const round = (n: number) => {
   return Math.round(n);
 };
+
+export const random = () => {
+  return Math.random();
+};
