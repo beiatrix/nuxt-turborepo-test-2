@@ -1,5 +1,11 @@
 # math-helpers-test
 
+## 1.8.0
+
+### Minor Changes
+
+- e3094c8: add min method
+
 ## 1.7.0
 
 ### Minor Changes
