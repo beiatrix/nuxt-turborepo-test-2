@@ -1,5 +1,7 @@
 # eslint-config-custom
 
+## 1.9.5
+
 ## 1.9.4
 
 ## 1.9.3

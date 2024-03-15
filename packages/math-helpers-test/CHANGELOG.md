@@ -1,5 +1,11 @@
 # math-helpers-test
 
+## 1.9.5
+
+### Patch Changes
+
+- [#105](https://github.com/beiatrix/nuxt-turborepo-test/pull/105) [`c0d71ee`](https://github.com/beiatrix/nuxt-turborepo-test/commit/c0d71ee37a9cc748ef849fd8f9604c0893ccbc3f) Thanks [@beiatrix](https://github.com/beiatrix)! - add round method
+
 ## 1.9.4
 
 ### Patch Changes
