@@ -21,3 +21,7 @@ export const min = (a: number, b: number) => {
 export const max = (a: number, b: number) => {
   return Math.max(a, b);
 };
+
+export const floor = (n: number) => {
+  return Math.floor(n);
+};
