@@ -1,5 +1,11 @@
 # math-helpers-test
 
+## 1.9.0
+
+### Minor Changes
+
+- 8027762: add max method
+
 ## 1.8.0
 
 ### Minor Changes
