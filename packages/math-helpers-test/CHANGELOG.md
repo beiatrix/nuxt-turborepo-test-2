@@ -1,5 +1,11 @@
 # math-helpers-test
 
+## 1.9.7
+
+### Patch Changes
+
+- [#120](https://github.com/beiatrix/nuxt-turborepo-test/pull/120) [`11b89d6`](https://github.com/beiatrix/nuxt-turborepo-test/commit/11b89d6b99765d4647287ad9b0b5cef0bf91e696) Thanks [@beiatrix](https://github.com/beiatrix)! - feat(math-helpers): math ceil method'
+
 ## 1.9.6
 
 ### Patch Changes
