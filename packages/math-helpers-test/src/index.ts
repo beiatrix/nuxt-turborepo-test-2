@@ -26,6 +26,10 @@ export const floor = (n: number) => {
   return Math.floor(n);
 };
 
+export const ceil = (n: number) => {
+  return Math.ceil(n);
+};
+
 export const round = (n: number) => {
   return Math.round(n);
 };
