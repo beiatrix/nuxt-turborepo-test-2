@@ -1,5 +1,17 @@
 # docs
 
+## 2.0.0
+
+### Major Changes
+
+- [#125](https://github.com/beiatrix/nuxt-turborepo-test/pull/125) [`320d7df`](https://github.com/beiatrix/nuxt-turborepo-test/commit/320d7df39cb283840b21cb7b37b6fae0feb2a0d0) Thanks [@beiatrix](https://github.com/beiatrix)! - feat(apps): add hyphen to app names
+
+### Patch Changes
+
+- Updated dependencies [[`320d7df`](https://github.com/beiatrix/nuxt-turborepo-test/commit/320d7df39cb283840b21cb7b37b6fae0feb2a0d0)]:
+  - math-helpers-test@2.0.0
+  - ui@2.0.0
+
 ## 1.9.7
 
 ### Patch Changes

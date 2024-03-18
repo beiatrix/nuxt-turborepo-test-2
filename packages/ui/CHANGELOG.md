@@ -1,5 +1,11 @@
 # ui
 
+## 2.0.0
+
+### Major Changes
+
+- [#125](https://github.com/beiatrix/nuxt-turborepo-test/pull/125) [`320d7df`](https://github.com/beiatrix/nuxt-turborepo-test/commit/320d7df39cb283840b21cb7b37b6fae0feb2a0d0) Thanks [@beiatrix](https://github.com/beiatrix)! - feat(apps): add hyphen to app names
+
 ## 1.9.7
 
 ## 1.9.6
