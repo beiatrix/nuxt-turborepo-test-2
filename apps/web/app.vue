@@ -12,5 +12,5 @@ useHead({
 </script>
 
 <template>
-  <Page :app-name="`${appName} - ${add(1, 2)} - :)`" />
+  <Page :app-name="`${appName} - ${add(1, 2)} - HI :)`" />
 </template>
